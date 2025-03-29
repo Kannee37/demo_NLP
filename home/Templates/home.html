@@ -63,6 +63,20 @@
                 text-align: center;
                 color:rgb(30, 29, 29);
             }
+
+            .footer {
+                background:rgb(211, 206, 194);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+                margin-top: 100px;
+                margin-bottom: 100px;
+                width: 90%;
+                text-align: center;
+                padding: 20px;
+                padding-left: 100px;
+                padding-right: 100px;
+            }
+
         </style>
     </head>
     <body>
@@ -82,7 +96,11 @@
             <!--body-->
             <div>
                 <h1 class="title"> Nhận Diện Thư Rác </h1>
-                <p class='cus_p'> Đây là bài tập lớn môn NLP của nhóm ABS Team với đề tài phân loại thư rác </p>
+                <p class='cus_p'> Đây là bài tập lớn môn NLP của nhóm ABS Team với đề tài phân loại thư rác! </p>
+                <div class='w-50 d-flex justify-content-center align-items-center mx-auto'> 
+                    <p class='cus_p'> Hãy nhập (copy/paste) một email bằng tiếng Anh vào ô bên dưới và nhấn "Kiểm tra" để xem email đó có bị phân loại là spam hay không nhé. Chúng tôi sẽ phân tích nội dung và đưa ra kết quả ngay lập tức. Chúc bạn có một trải nghiệm thú vị! <p>
+                </div>
+                
                 <form method="POST" action="/submit/">
                     {% csrf_token %} 
                     <div class="container_text d-flex justify-content-center align-items-center mx-auto">
@@ -94,12 +112,25 @@
                         </button>
                     </div>
                 </form> 
+
                 {% if result %}
                     <p class='demo_re mx-auto mt-3'>{{ result }}</p>
                 {% endif %}
             </div>
             <!--footer-->
-        </divv>
+            {% comment %} <div class='footer d-flex justify-content-center align-items-center mx-auto'>
+                <p> 
+                    Xin chào mọi người, đây là bài tập lớn môn NLP (Natural Language Processing) của nhóm ABS Team chúng tớ!
+                    <br>
+                    Để sử dụng demo app nho nhỏ này, cậu hãy copy một email tiếng anh có trong email của cậu và dán vào đây nha, 
+                    app sẽ nói cho cậu đó là email Spam hay không phải email Spam (Ham).
+                    <br>
+                    Cảm ơn cậu đã đọc!
+                    <br>
+                    From ABS Team with love!
+                </p>
+            </div> {% endcomment %}
+        </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     </body>
 </html>
