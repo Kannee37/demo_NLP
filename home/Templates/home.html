@@ -9,14 +9,38 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="">
         <style>
-            body {
+            {% comment %} body {
                 background-color:rgb(246, 242, 233);
                 font-family: Arial, sans-serif;
+            } {% endcomment %}
+
+            body {
+                background-image: url('https://cdn.thuvienphapluat.vn/uploads/tintuc/2023/04/01/tin-nhan-rac-cuoc-goi-rac.jpg');
+                background-size: cover;  /* Đảm bảo hình ảnh phủ toàn bộ màn hình */
+                background-position: center;
+                background-attachment: fixed; /* Giữ hình nền cố định khi cuộn trang */
+                height: 100vh; /* Đảm bảo body có chiều cao đầy đủ */
+            
+                /* Làm mờ nền */
+                position: relative;
+
+                font-family: Arial, sans-serif;
+            }
+            
+            body::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(69, 69, 69, 0.5); /* Tạo lớp phủ với màu đen và độ trong suốt 50% */
+                z-index: -1; /* Đảm bảo lớp phủ nằm dưới nội dung */
             }
 
             .navbar-brand {
                 font-size: 15px; /* Thu nhỏ chữ */
-                color:rgb(118, 116, 116)
+                color:rgb(255, 255, 255)
             }
             
             .btn_nav {
@@ -24,7 +48,7 @@
             }
 
             .title {
-                color: #E15A46;
+                color:rgb(236, 74, 49);
                 text-align: center;
                 margin-top: 30px;
                 font-weight: bold;
@@ -32,7 +56,7 @@
 
             .cus_p {
                 font-size: 15px;
-                color:rgb(118, 116, 116);
+                color:rgb(255, 255, 255);
                 text-align: center;
             }
 
@@ -80,13 +104,13 @@
         </style>
     </head>
     <body>
-        <div class='container-md'>
+        <div class='container-md m'>
             <!--header-->
             <nav class="navbar navbar-expand-lg mx-5">
                 <div class="container-fluid">
-                    <a class="navbar-brand" >ABS Team </a>
+                    <a class="navbar-brand" > ABS Team </a>
                     <div>
-                        <button type="button" class="btn btn_nav" style='color:rgb(118, 116, 116)'>
+                        <button type="button" class="btn btn_nav" style='color:rgb(255, 255, 255)'>
                             Log in
                         </button>
                         <button type="button" class="btn btn_nav btn-danger">Sign up</button>      

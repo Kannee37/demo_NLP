@@ -23,4 +23,3 @@ urlpatterns = [
     path('', home.get_home),
     path('submit/', home.submit_form)
 ]
-

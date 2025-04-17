@@ -1,7 +1,9 @@
 from django.shortcuts import render
+from django.http import HttpResponse
 from . import lstm as lstm_model
 
 # Create your views here.
+# view có thể trả về luôn 
 def get_home(request):
     return render(request,'home.html')
 
